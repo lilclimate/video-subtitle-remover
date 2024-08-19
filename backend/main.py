@@ -914,8 +914,8 @@ if __name__ == '__main__':
     video_path = input(f"Please input video or image file path: ").strip()
     # 判断视频路径是不是一个目录，是目录的化，批量处理改目录下的所有视频文件
     # 2. 按以下顺序传入字幕区域
-    # sub_area = (ymin, ymax, xmin, xmax)
-    sub_area = (1627, 82, 0, 594)
+    sub_area = (ymin, ymax, xmin, xmax)
+    # sub_area = (1627, 82, 0, 594)
     # 3. 新建字幕提取对象
     if is_video_or_image(video_path):
         sd = SubtitleRemover(video_path, sub_area=None)
