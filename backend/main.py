@@ -918,7 +918,7 @@ if __name__ == '__main__':
 
     # 手动框选位置
     y_min, y_max, x_min, x_max = map(int, input(
-        f"{config.interface_config['Main']['ChooseSubArea']} (ymin ymax xmin xmax)：").split())
+        f"请指定字幕区域 (ymin ymax xmin xmax)：").split())
     sub_area = (y_min, y_max, x_min, x_max)
     # 3. 新建字幕提取对象
     if is_video_or_image(video_path):
