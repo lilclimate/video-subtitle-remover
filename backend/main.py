@@ -511,7 +511,7 @@ class SubtitleDetect:
 class SubtitleRemover:
     def __init__(self, vd_path, sub_area=None, gui_mode=False):
         importlib.reload(config)
-                print(f"Subtitle area______ (sub_area) provided: {self.sub_area}")
+        print(f"Subtitle area______ (sub_area) provided: {self.sub_area}")
 
         # 线程锁
         self.lock = threading.RLock()
