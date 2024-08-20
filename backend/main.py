@@ -511,6 +511,8 @@ class SubtitleDetect:
 class SubtitleRemover:
     def __init__(self, vd_path, sub_area=None, gui_mode=False):
         importlib.reload(config)
+                print(f"Subtitle area______ (sub_area) provided: {self.sub_area}")
+
         # 线程锁
         self.lock = threading.RLock()
         # 用户指定的字幕区域位置
@@ -914,12 +916,19 @@ if __name__ == '__main__':
     video_path = input(f"Please input video or image file path: ").strip()
     # 判断视频路径是不是一个目录，是目录的化，批量处理改目录下的所有视频文件
     # 2. 按以下顺序传入字幕区域
-    # sub_area = (ymin, ymax, xmin, xmax)
-
     # 手动框选位置
-    y_min, y_max, x_min, x_max = map(int, input(
-        f"请指定字幕区域 (ymin ymax xmin xmax)：").split())
-    sub_area = (y_min, y_max, x_min, x_max)
+    while True:
+    try:
+        y_min, y_max, x_min, x_max = map(int, input("请指定字幕区域 (ymin ymax xmin xmax)：").split())
+        if y_min >= y_max or x_min >= x_max:
+            print("无效的区域，请确保ymin < ymax 且 xmin < xmax。")
+            continue
+        break
+    except ValueError:
+        print("输入无效，请输入四个整数值，用空格分隔。")
+
+    sub_area = (ymin, ymax, xmin, xmax)
+
     # 3. 新建字幕提取对象
     if is_video_or_image(video_path):
         sd = SubtitleRemover(video_path, sub_area=None)
