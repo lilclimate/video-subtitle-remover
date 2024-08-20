@@ -921,8 +921,6 @@ if __name__ == '__main__':
         y_min, y_max, x_min, x_max = map(int, input("请指定字幕区域 (ymin ymax xmin xmax)：").split())
         if y_min >= y_max or x_min >= x_max:
             print("无效的区域，请确保ymin < ymax 且 xmin < xmax。")
-            continue
-        break
         sub_area = (y_min, y_max, x_min, x_max)
     except ValueError:
         print("输入无效，请输入四个整数值，用空格分隔。")
