@@ -924,10 +924,11 @@ if __name__ == '__main__':
             print("无效的区域，请确保ymin < ymax 且 xmin < xmax。")
             continue
         break
+        sub_area = (y_min, y_max, x_min, x_max)
     except ValueError:
         print("输入无效，请输入四个整数值，用空格分隔。")
 
-    sub_area = (ymin, ymax, xmin, xmax)
+    # sub_area = (ymin, ymax, xmin, xmax)
 
     # 3. 新建字幕提取对象
     if is_video_or_image(video_path):
