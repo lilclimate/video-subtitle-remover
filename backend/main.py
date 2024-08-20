@@ -926,6 +926,7 @@ if __name__ == '__main__':
         print("输入无效，请输入四个整数值，用空格分隔。")
 
     # sub_area = (ymin, ymax, xmin, xmax)
+    print(f"before_SubtitleRemover (sub_area) provided: {sub_area}")
 
     # 3. 新建字幕提取对象
     if is_video_or_image(video_path):
