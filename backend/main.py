@@ -917,7 +917,6 @@ if __name__ == '__main__':
     # 判断视频路径是不是一个目录，是目录的化，批量处理改目录下的所有视频文件
     # 2. 按以下顺序传入字幕区域
     # 手动框选位置
-    while True:
     try:
         y_min, y_max, x_min, x_max = map(int, input("请指定字幕区域 (ymin ymax xmin xmax)：").split())
         if y_min >= y_max or x_min >= x_max:
