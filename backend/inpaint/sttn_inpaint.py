@@ -264,6 +264,7 @@ class STTNVideoInpaint:
         rec_time = frame_info['len'] // self.clip_gap if frame_info['len'] % self.clip_gap == 0 else frame_info['len'] // self.clip_gap + 1
         # 计算分割高度，用于确定修复区域的大小
         split_h = int(frame_info['W_ori'] * 3 / 16)
+        print(f"INPUT_MASK(input_mask)____: {input_mask}")
         if input_mask is None:
             # 读取掩码
             mask = self.sttn_inpaint.read_mask(self.mask_path)
